@@ -23,5 +23,45 @@ def index():
         data_table=data["data"],
         data_last_updated=data["last_updated"],
         data_progres=data["progres"],
-
     )
+
+
+@app.route("/api")
+def api():
+    return jsonify({
+        "message": "Welcome to API endpoint",
+        "endpoints": [
+            "/api/data-count",
+            "/api/data-paslon",
+            "/api/data-wilayah",
+            "/api/data-table",
+        ]
+    })
+
+
+@app.route("/api/data-count")
+def data_count():
+    request_helper = requestHelper()
+    data = request_helper.get_count()
+    return jsonify(data)
+
+
+@app.route("/api/data-paslon")
+def data_paslon():
+    request_helper = requestHelper()
+    data = request_helper.get_paslon()
+    return jsonify(data)
+
+
+@app.route("/api/data-wilayah")
+def data_wilayah():
+    request_helper = requestHelper()
+    data = request_helper.get_wilayah()
+    return jsonify(data)
+
+
+@app.route("/api/data-table")
+def data_table():
+    request_helper = requestHelper()
+    data = request_helper.get_table()
+    return jsonify(data)
