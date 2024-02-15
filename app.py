@@ -39,13 +39,6 @@ def api():
     })
 
 
-@app.route("/api/data-count")
-def data_count():
-    request_helper = requestHelper()
-    data = request_helper.get_count()
-    return jsonify(data)
-
-
 @app.route("/api/data-paslon")
 def data_paslon():
     request_helper = requestHelper()
