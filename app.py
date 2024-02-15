@@ -31,7 +31,6 @@ def api():
     return jsonify({
         "message": "Welcome to API endpoint",
         "endpoints": [
-            "/api/data-count",
             "/api/data-paslon",
             "/api/data-wilayah",
             "/api/data-table",
